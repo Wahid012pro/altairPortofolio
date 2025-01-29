@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTAIR Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.5rem;
+        }
+        .about, .services, .contact {
+            text-align: center;
+        }
+        .services .card {
+            display: inline-block;
+            width: 30%;
+            margin: 1%;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ALTAIR</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>Welcome to ALTAIR, a leading company dedicated to innovation and excellence. We are committed to delivering top-notch solutions to meet the unique needs of our clients.</p>
+    </section>
+
+    <section id="services" class="section services">
+        <h2>Our Services</h2>
+        <div class="card">
+            <h3>Consulting</h3>
+            <p>Providing expert guidance to drive business growth and success.</p>
+        </div>
+        <div class="card">
+            <h3>Development</h3>
+            <p>Creating custom solutions tailored to your business needs.</p>
+        </div>
+        <div class="card">
+            <h3>Support</h3>
+            <p>Ensuring smooth operations with our reliable support services.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need more information? Reach out to us anytime!</p>
+        <p>Email: info@altair.com</p>
+        <p>Phone: +1 234 567 890</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 ALTAIR. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
