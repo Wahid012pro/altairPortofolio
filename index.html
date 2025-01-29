@@ -16,6 +16,7 @@
             color: white;
             padding: 1rem 0;
             text-align: center;
+            width: 100%;
         }
         header h1 {
             margin: 0;
@@ -26,6 +27,7 @@
             display: flex;
             justify-content: center;
             background-color: #444;
+            border-radius: 10px;
             margin: 0;
         }
         nav ul li {
@@ -76,16 +78,26 @@
 <body>
 
 <header>
-    <h1>ALTAIR</h1>
+    <img src="logo.png" alt="Logo">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: fixed; 
+            background-color: #333;">
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+        <img src="logo.png" alt="Logo" style="max-height: 10%; max-width: 10%;">
+        
+        <h1 style="margin-right: 10%;">ALTAIR</h1>
+    </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+    </div>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+
 
 <div class="container">
     <section id="about" class="section about">
@@ -121,5 +133,57 @@
     <p>&copy; 2025 ALTAIR. All rights reserved.</p>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const mainLogo = document.querySelector("header > img");
+
+    let lastScrollPosition = 0;
+
+    window.addEventListener("scroll", function () {
+        const currentScrollPosition = window.scrollY;
+
+        if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+            // Gulir ke bawah, sembunyikan logo utama
+            mainLogo.style.opacity = "0";
+            mainLogo.style.visibility = "hidden";
+        } else {
+            // Gulir ke atas, tampilkan logo utama
+            mainLogo.style.opacity = "1";
+            mainLogo.style.visibility = "visible";
+        }
+
+        lastScrollPosition = currentScrollPosition;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fixedDiv = document.querySelector("div[style*='position: fixed']");
+    const originalTop = fixedDiv.offsetTop;
+
+    let lastScrollPosition = 0;
+
+    window.addEventListener("scroll", function () {
+        const currentScrollPosition = window.scrollY;
+
+        if (currentScrollPosition > originalTop) {
+            // Tambahkan animasi dan buat elemen menempel di atas
+            fixedDiv.style.position = "fixed";
+            fixedDiv.style.top = "0";
+            fixedDiv.style.padding = "0 0 10px 0";
+            fixedDiv.style.left = "0";
+            fixedDiv.style.width = "100%";
+            fixedDiv.style.transition = "top 5s ease";
+        } else {
+            // Kembalikan posisi elemen ke semula
+            fixedDiv.style.position = "static";
+            fixedDiv.style.transition = "none";
+        }
+
+        lastScrollPosition = currentScrollPosition;
+    });
+});
+
+</script>
 </body>
 </html>
